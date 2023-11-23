@@ -4,9 +4,11 @@ import 'package:project22/screen/circles_crearte/cirecles_create_screen.dart';
 import 'package:project22/screen/circles_screen/simple_cirecle_screen.dart';
 import 'package:project22/screen/event_day_screen/event_day_screen.dart';
 import 'package:project22/screen/event_detail_screen/event_detail_screen.dart';
+import 'package:project22/screen/event_registration/event_registration.dart';
 import 'package:project22/screen/feed_back_screen/feed_back_screen.dart';
 import 'package:project22/screen/generate_event_templates_generate/generates_event_templates.dart';
 import 'package:project22/screen/invitation_screen/invitation_screen.dart';
+import 'package:project22/screen/profile_screen/profile_screen.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_images/app_images.dart';
 import '../GenerateEvent/generate_event.dart';
@@ -33,10 +35,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
     MasterDashboardView(),
     GeneratesEventTemplates(),
     InvitationScreen(),
-    Container(
-      child: Text("profile"),
-    ),
-    Container(child: Text("Registure")),
+    EventRegistrationScreen(),
+    ProfileScreen(),
     EventDetailScreen(),
     ParticipantAiAssistant(),
     CirclesCreateScreen(),

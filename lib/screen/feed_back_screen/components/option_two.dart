@@ -14,7 +14,7 @@ class OptionTwo extends StatelessWidget {
     return Consumer<CheckboxController2>(builder: (context, model, child) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
+        children: [
           Row(
             children: [
               CustomCheckbox(
