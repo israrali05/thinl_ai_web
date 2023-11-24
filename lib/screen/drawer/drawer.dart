@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/screen/ai_generate_ideas/ai_generate_ideas.dart';
+import 'package:project22/screen/circle_details_moderator/circle_details_moderator.dart';
 import 'package:project22/screen/circles_crearte/cirecles_create_screen.dart';
 import 'package:project22/screen/circles_screen/simple_cirecle_screen.dart';
 import 'package:project22/screen/event_day_screen/event_day_screen.dart';
@@ -40,7 +41,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
     ProfileScreen(),
     EventDetailScreen(),
     ParticipantAiAssistant(),
-    CirclesCreateScreen(),
+    // CirclesCreateScreen(),
+    CircleDetailsModerator(),
     SimpleCircleScreen(),
     ParticipantGroupChat(),
     ParticipantRankingIdeas(),

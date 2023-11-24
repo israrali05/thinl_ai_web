@@ -27,6 +27,8 @@ class AppImages {
   static const logout = "assets/images/png/logout.png";
   static const drawarInterviewPng = "assets/images/png/interview.png";
   static const drawarprofileIconPng = "assets/images/png/personbottom.png";
+  static const threeDotsPng = "assets/images/png/three_dots.png";
+
 
   ///Login Images
   static const login = "assets/images/png/login.png";
