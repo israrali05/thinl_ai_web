@@ -8,6 +8,7 @@ import 'package:project22/screen/event_registration/event_registration.dart';
 import 'package:project22/screen/feed_back_screen/feed_back_screen.dart';
 import 'package:project22/screen/generate_event_templates_generate/generates_event_templates.dart';
 import 'package:project22/screen/invitation_screen/invitation_screen.dart';
+import 'package:project22/screen/moderator_benchmark_screen/moderator_benchmark_screen.dart';
 import 'package:project22/screen/profile_screen/profile_screen.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_images/app_images.dart';
@@ -50,7 +51,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
     EventTopIdea(),
     TopFiveSteps(),
     FeedBackScreen(),
-    Container(color: Colors.green),
+    ModeratorBenchMarkScreen(),
+    Container(color: Colors.red),
     Container(color: Colors.red),
   ];
 
@@ -112,7 +114,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       image: AppImages.registration,
                       title: "Registration"),
                   buildDrawerItem(
-                      index: 4, image: AppImages.profile, title: "Profile"),
+                      index: 4,
+                      image: AppImages.drawarprofileIconPng,
+                      title: "Profile"),
                   buildDrawerItem(
                       index: 5,
                       image: AppImages.eventDetail,
@@ -153,23 +157,25 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       index: 14, image: AppImages.eventDay, title: "Event Day"),
                   buildDrawerItem(
                       index: 15,
-                      image: AppImages.report,
+                      image: AppImages.ideasDiscuss,
                       title: "Event’s Top Idea"),
                   buildDrawerItem(
                       index: 16,
                       image: AppImages.ideasDiscuss,
                       title: "5 Steps "),
                   buildDrawerItem(
-                      index: 17,
+                      index: 17, image: AppImages.report, title: "Report Form"),
+                  buildDrawerItem(
+                      index: 18,
                       image: AppImages.benchmarks,
-                      title: "Report Form"),
+                      title: "Benchmarks"),
                   const SizedBox(
                     height: 196,
                   ),
                   buildDrawerItem(
-                      index: 18, image: AppImages.settings, title: "Settings"),
+                      index: 19, image: AppImages.settings, title: "Settings"),
                   buildDrawerItem(
-                      index: 19, image: AppImages.logout, title: "Log Out"),
+                      index: 20, image: AppImages.logout, title: "Log Out"),
                 ],
               ),
             ),
@@ -196,8 +202,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return ListTile(
       leading: Image.asset(
         image,
-        width: 18,
-        height: 18,
+        width: 20,
+        height: 20,
         color: _selectedIndex == index ? Colors.white : AppColors.iconColor,
       ),
       trailing: trailingIcon != null ? Icon(trailingIcon) : null,
