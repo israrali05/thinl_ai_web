@@ -15,8 +15,8 @@ class AppImages {
   static const genAIIdea = "assets/images/png/ai_gen_ideas.png";
   static const eventDay = "assets/images/png/event_day.png";
   static const eventDaymessage = "assets/images/png/eventday_message.png";
-    static const feedBacktickpng = "assets/images/png/feedback_tick.png";
-      static const feedBackmMicrophonepng =
+  static const feedBacktickpng = "assets/images/png/feedback_tick.png";
+  static const feedBackmMicrophonepng =
       "assets/images/png/micophone_feedback.png";
 
   static const report = "assets/images/png/report.png";
@@ -25,6 +25,10 @@ class AppImages {
   static const benchmarks = "assets/images/png/bench_marks.png";
   static const settings = "assets/images/png/settings.png";
   static const logout = "assets/images/png/logout.png";
+  static const drawarInterviewPng = "assets/images/png/interview.png";
+  static const drawarprofileIconPng = "assets/images/png/personbottom.png";
+  static const threeDotsPng = "assets/images/png/three_dots.png";
+
 
   ///Login Images
   static const login = "assets/images/png/login.png";

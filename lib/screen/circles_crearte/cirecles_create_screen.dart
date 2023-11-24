@@ -25,14 +25,9 @@ class CirclesCreateScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                  text: "Circles Create",
+                  text: "Circle Detail ",
                   style: AppTextStyles.mainHeadingStyle,
                 ),
-                SizedBox(
-                    height: 120,
-                    child: StepperScreen(
-                      currentStep: 4,
-                    )),
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 35, horizontal: 20),
                   decoration: ShapeDecoration(

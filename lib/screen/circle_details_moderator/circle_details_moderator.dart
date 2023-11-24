@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project22/provider/event_screen_controller.dart';
+import 'package:project22/provider/moderator_benchmark_controller.dart/moderator_bechmark.dart';
+import 'package:project22/screen/circle_details_moderator/components/circle_container.dart';
+import 'package:project22/screen/circle_details_moderator/components/file_container.dart';
+import 'package:project22/screen/circle_details_moderator/components/member_container.dart';
+import 'package:project22/screen/circle_details_moderator/components/overview_container.dart';
 import 'package:project22/screen/event_day_screen/components/dafault_container.dart';
 import 'package:project22/screen/event_day_screen/components/ideas_screen.dart';
 import 'package:project22/screen/event_day_screen/components/presentation_screen.dart';
-import 'package:project22/screen/event_day_screen/components/use_gen_ai.dart';
+import 'package:project22/screen/moderator_benchmark_screen/moderator_benchmark_screen.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
@@ -11,21 +16,18 @@ import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/stepper_widget.dart/stepper_widget.dart';
 import 'package:provider/provider.dart';
 
-class EventDayScreen extends StatelessWidget {
-  const EventDayScreen({super.key});
+class CircleDetailsModerator extends StatelessWidget {
+  const CircleDetailsModerator({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<String> buttonTitles = [
-      'Presentation Screen',
-      'Ideas',
-      'Use Gen Ai',
-    ];
+    List<String> buttonTitles = ['Overview', 'Members', 'Cirlce', 'Files'];
 
     List<Widget> screenContents = [
-      PresentationScreen(),
-      IdeasScreenWidget(),
-      UseGenAI(),
+      OverviewConatiner(),
+      MemberContainer(),
+      CircleContainer(),
+      FileContainer(),
     ];
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
@@ -40,16 +42,13 @@ class EventDayScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CustomText(
-                text: "Event Day",
+                text: "Circle Detail",
                 style: AppTextStyles.mainHeadingStyle,
               ),
               SizedBox(
-                height: 120,
-                child: StepperScreen(
-                  currentStep: 6,
-                ),
+                height: 20,
               ),
-              Consumer<EventScreenProvider>(
+              Consumer<ModeratorControllers>(
                   builder: (context, selectedIndexProvider, child) {
                 return Expanded(
                   child: Column(
@@ -66,7 +65,7 @@ class EventDayScreen extends StatelessWidget {
                               onTap: () {
                                 if (selectedIndexProvider.selectedIndex ==
                                     index) {
-                                  selectedIndexProvider.selectedIndex = -1;
+                                  selectedIndexProvider.selectedIndex = 0;
                                 } else {
                                   selectedIndexProvider.selectedIndex = index;
                                 }
@@ -112,10 +111,8 @@ class EventDayScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       Expanded(
-                        child: selectedIndexProvider.selectedIndex == -1
-                            ? DafaultContainerWidget()
-                            : screenContents[
-                                selectedIndexProvider.selectedIndex],
+                        child:
+                            screenContents[selectedIndexProvider.selectedIndex],
                       ),
                     ],
                   ),
