@@ -25,4 +25,5 @@ class AppColors {
 
   ///Icon Color
   static const Color borderColor = Color(0xFFDEDCDC);
+  static const Color containerColor = Color(0xFFFAFAFA);
 }

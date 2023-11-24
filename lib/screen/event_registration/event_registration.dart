@@ -43,18 +43,20 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                     Row(
                       children: [
                         Expanded(
-                            child: CustomTextField(
-                          label: "First Name",
-                          hintText: "First Name",
-                        )),
+                          child: CustomTextField(
+                            label: "First Name",
+                            hintText: "First Name",
+                          ),
+                        ),
                         SizedBox(
                           width: 20,
                         ),
                         Expanded(
-                            child: CustomTextField(
-                          label: "Last Name",
-                          hintText: "Last Name",
-                        )),
+                          child: CustomTextField(
+                            label: "Last Name",
+                            hintText: "Last Name",
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -210,7 +212,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                             textStyle: AppTextStyles.hintStyle
                                 .copyWith(color: AppColors.whiteColor))
                       ],
-                    )
+                    ),
                   ]),
             )));
   }

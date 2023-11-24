@@ -9,6 +9,9 @@ import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/paragraph_widget_text/paragraph_widget_text.dart';
 import 'package:provider/provider.dart';
 
+import '../../../widget/our_botton/our_botton.dart';
+import '../../feed_back_screen/components/message_box_widget.dart';
+
 class IdeasScreenWidget extends StatelessWidget {
   const IdeasScreenWidget({
     super.key,
@@ -301,6 +304,31 @@ class IdeasWidget extends StatelessWidget {
             ),
           );
         }),
+        CustomText(
+          text: "Share Your Opinions",
+          style: AppTextStyles.hintStyle,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        SizedBox(height: 20),
+        MessageBoxWidget(),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Ourbotton(
+                text: "Submit",
+                height: 35,
+                width: 70,
+                backgroundColor: AppColors.primary,
+                borderRadius: 5,
+                textStyle: AppTextStyles.hintStyle
+                    .copyWith(color: AppColors.whiteColor))
+          ],
+        ),
       ]),
     );
   }
