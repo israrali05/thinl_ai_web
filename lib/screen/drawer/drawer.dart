@@ -13,6 +13,8 @@ import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_images/app_images.dart';
 import '../GenerateEvent/generate_event.dart';
 import '../master_dashboard/master_dashboard_view.dart';
+import '../moderator_ideas/moderator_ideas.dart';
+import '../moderator_report/moderator_report.dart';
 import '../participant_ai_assistant/participant_ai_assistant.dart';
 import '../participant_all_circle_ideas/participant_al_circle_ideas.dart';
 import '../participant_circle_leader_vote/ideas_briefing.dart';

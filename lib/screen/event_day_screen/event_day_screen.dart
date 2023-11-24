@@ -3,6 +3,7 @@ import 'package:project22/provider/event_screen_controller.dart';
 import 'package:project22/screen/event_day_screen/components/dafault_container.dart';
 import 'package:project22/screen/event_day_screen/components/ideas_screen.dart';
 import 'package:project22/screen/event_day_screen/components/presentation_screen.dart';
+import 'package:project22/screen/event_day_screen/components/use_gen_ai.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
@@ -18,11 +19,13 @@ class EventDayScreen extends StatelessWidget {
     List<String> buttonTitles = [
       'Presentation Screen',
       'Ideas',
+      'Use Gen Ai',
     ];
 
     List<Widget> screenContents = [
       PresentationScreen(),
       IdeasScreenWidget(),
+      UseGenAI(),
     ];
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
@@ -41,10 +44,11 @@ class EventDayScreen extends StatelessWidget {
                 style: AppTextStyles.mainHeadingStyle,
               ),
               SizedBox(
-                  height: 120,
-                  child: StepperScreen(
-                    currentStep: 6,
-                  )),
+                height: 120,
+                child: StepperScreen(
+                  currentStep: 6,
+                ),
+              ),
               Consumer<EventScreenProvider>(
                   builder: (context, selectedIndexProvider, child) {
                 return Expanded(
