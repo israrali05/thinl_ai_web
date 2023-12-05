@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project22/screen/drawer/drawer.dart';
@@ -240,6 +239,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                                 style: ElevatedButton.styleFrom(
+                                  foregroundColor: AppColors.whiteColor,
+                                  backgroundColor: AppColors.primary,
                                   fixedSize: Size(
                                     screenWidth,
                                     screenHeight * 0.048,
@@ -376,6 +377,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   // style:AppTextStyles.btnStyle,
                                 ),
                                 style: ElevatedButton.styleFrom(
+                                  foregroundColor: AppColors.whiteColor,
+                                  backgroundColor: AppColors.primary,
                                   fixedSize: Size(
                                     screenWidth,
                                     screenHeight * 0.048,

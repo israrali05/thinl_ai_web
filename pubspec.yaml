@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  another_stepper: ^1.2.2
   arc_progress_bar_new: ^1.0.4
   bubble: ^1.2.1
   chewie: ^1.7.1
@@ -42,8 +43,8 @@ dependencies:
   provider: ^6.1.1
   speech_to_text: ^6.4.1
   step_indicator: ^0.0.1
-  video_player: ^2.8.1
   syncfusion_flutter_charts: ^23.1.44
+  video_player: ^2.8.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
