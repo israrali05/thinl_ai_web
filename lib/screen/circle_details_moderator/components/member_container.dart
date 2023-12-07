@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project22/model/detail_cirecle_model.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 class MemberContainer extends StatelessWidget {
@@ -9,13 +10,14 @@ class MemberContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return SingleChildScrollView(
       child: Column(
         children: [
           Row(
             children: [
               SizedBox(
-                height: 30,
+                height: MySize.size30,
               ),
               Expanded(
                   child: Container(
@@ -36,7 +38,7 @@ class MemberContainer extends StatelessWidget {
                         style: AppTextStyles.headingTwo,
                       ),
                       SizedBox(
-                        height: 15,
+                        height: MySize.size15,
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 80 / 100,
@@ -78,8 +80,8 @@ class MemberContainer extends StatelessWidget {
                                         DataCell(Row(
                                           children: [
                                             Container(
-                                              width: 25,
-                                              height: 25,
+                                              width: MySize.size25,
+                                              height: MySize.size25,
                                               margin: EdgeInsets.all(8),
                                               padding: EdgeInsets.all(2),
                                               decoration: BoxDecoration(
@@ -168,8 +170,8 @@ class MemberContainer extends StatelessWidget {
                                         DataCell(Row(
                                           children: [
                                             Container(
-                                              width: 25,
-                                              height: 25,
+                                              width: MySize.size25,
+                                              height: MySize.size25,
                                               margin: EdgeInsets.all(8),
                                               padding: EdgeInsets.all(2),
                                               decoration: BoxDecoration(

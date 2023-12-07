@@ -8,6 +8,7 @@ import 'package:project22/screen/feed_back_screen/components/rating_star_widget.
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/our_botton/our_botton.dart';
@@ -19,13 +20,14 @@ class FeedBackScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       appBar: MyAppBar(),
       backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Container(
-          margin: EdgeInsets.all(25),
+          margin: EdgeInsets.all(MySize.size25),
           child: Row(
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,43 +38,43 @@ class FeedBackScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 35),
+                      padding:  EdgeInsets.symmetric(vertical: MySize.size35),
                       child: CustomText(
                         text: 'FeedBack Forms',
                         style: AppTextStyles.mainHeadingStyle,
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: MySize.size10,
                     ),
                     Text(
                       AppTexts.customLoremText,
                       style: AppTextStyles.hintStyle,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: MySize.size10,
                     ),
                     OptionOne(),
                     SizedBox(
-                      height: 10,
+                      height: MySize.size10,
                     ),
                     Text(
                       AppTexts.customLoremText,
                       style: AppTextStyles.hintStyle,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: MySize.size10,
                     ),
                     OptionTwo(),
                     SizedBox(
-                      height: 40,
+                      height: MySize.size40,
                     ),
                     Text(
                       AppTexts.customLoremText,
                       style: AppTextStyles.hintStyle,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: MySize.size10,
                     ),
                     RatingBar.builder(
                       initialRating: 3,
@@ -83,7 +85,7 @@ class FeedBackScreen extends StatelessWidget {
                       allowHalfRating: true,
                       itemSize: 28,
                       itemCount: 5,
-                      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                      itemPadding: EdgeInsets.symmetric(horizontal: MySize.size4),
                       itemBuilder: (context, _) => const Icon(
                         Icons.star,
                         size: 5,
@@ -94,14 +96,14 @@ class FeedBackScreen extends StatelessWidget {
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     CustomText(
                       text: AppTexts.generate_events_template_text1,
                       style: AppTextStyles.hintStyle,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 50 / 100,
@@ -131,26 +133,26 @@ class FeedBackScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: MySize.size40,
                     ),
                     CustomText(
                       text: "Share Your Opinions",
                       style: AppTextStyles.hintStyle,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     MessageBoxWidget(),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Ourbotton(
                             text: "Submit",
-                            height: 35,
-                            width: 70,
+                            height: MySize.size35,
+                            width: MySize.size80,
                             backgroundColor: AppColors.primary,
                             borderRadius: 5,
                             textStyle: AppTextStyles.hintStyle
@@ -182,7 +184,7 @@ class FeedBackScreen extends StatelessWidget {
                         hintText: '',
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(
-                            vertical: 15.0, horizontal: 20.0),
+                            vertical: MySize.size15, horizontal: MySize.size20),
                       ),
                       style: TextStyle(color: Colors.black), // Text color
                     ),

@@ -4,6 +4,7 @@ import 'package:project22/screen/event_detail_screen/components/notificationCont
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_media_query/custom_media_qeury.dart';
 import 'package:project22/widget/custom_text_2/custom_text_2.dart';
@@ -14,6 +15,7 @@ class EventDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
         appBar: MyAppBar(),
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -28,12 +30,12 @@ class EventDetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 35),
+                    padding: EdgeInsets.symmetric(vertical: MySize.size35),
                     child: CustomTextTwo(
                       text: "Event Details",
                       textStyle: TextStyle(
                         color: AppColors.primary,
-                        fontSize: 28,
+                        fontSize: MySize.size28,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w700,
                         height: 0,
@@ -41,7 +43,7 @@ class EventDetailScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                      height: 150,
+                      height: MySize.size160,
                       child: StepperScreen(
                         currentStep: 3,
                       )),

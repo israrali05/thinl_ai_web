@@ -5,6 +5,7 @@ import 'package:project22/screen/feed_back_screen/components/custom_checkbox.dar
 import 'package:project22/screen/feed_back_screen/components/message_box_widget.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/custom_textfield_label/custom_textfield_label.dart';
@@ -23,11 +24,12 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     bool isChecked = false;
+    MySize().init(context);
     return Scaffold(
         backgroundColor: AppColors.textWhiteColor,
         appBar: MyAppBar(),
         body: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: EdgeInsets.all(MySize.size30),
             child: SingleChildScrollView(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -38,7 +40,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                       style: AppTextStyles.mainHeadingStyle,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       children: [
@@ -49,7 +51,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                           ),
                         ),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                           child: CustomTextField(
@@ -60,7 +62,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       children: [
@@ -70,7 +72,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                           hintText: "Age/Generation",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -78,7 +80,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                           hintText: "Gender Identity",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -88,7 +90,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       children: [
@@ -98,7 +100,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                           hintText: "Department",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -106,7 +108,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                           hintText: "Working Experience",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -116,7 +118,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size120,
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Expanded(
@@ -126,7 +128,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                             hintText: "Intersts",
                           )),
                       SizedBox(
-                        width: 20,
+                        width: MySize.size20,
                       ),
                       Expanded(
                         child: Column(
@@ -135,10 +137,10 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                             CustomText(
                               text: "Do you want join this event?",
                               style: AppTextStyles.hintStyle
-                                  .copyWith(fontSize: 18),
+                                  .copyWith(fontSize: MySize.size18),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: MySize.size20,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -155,7 +157,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                                         },
                                       ),
                                       SizedBox(
-                                        width: 20,
+                                        width: MySize.size20,
                                       ),
                                       Text('Anonymously',
                                           style: AppTextStyles.hintStyle),
@@ -163,7 +165,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                                   );
                                 }),
                                 SizedBox(
-                                  width: 20,
+                                  width: MySize.size20,
                                 ),
                                 Consumer<CheckboxController2>(
                                     builder: (context, model, child) {
@@ -176,7 +178,7 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                                         },
                                       ),
                                       SizedBox(
-                                        width: 10,
+                                        width: MySize.size10,
                                       ),
                                       Text('Good',
                                           style: AppTextStyles.hintStyle),
@@ -194,19 +196,19 @@ class _EventRegistrationScreenState extends State<EventRegistrationScreen> {
                       style: AppTextStyles.hintStyle,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     MessageBoxWidget(),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Ourbotton(
                             text: "Submit",
-                            height: 35,
-                            width: 70,
+                            height: MySize.size35,
+                            width: MySize.size80,
                             backgroundColor: AppColors.primary,
                             borderRadius: 5,
                             textStyle: AppTextStyles.hintStyle

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_button/custom_button.dart';
 import 'package:project22/widget/custom_media_query/custom_media_qeury.dart';
@@ -16,6 +17,7 @@ class InvitationScreen extends StatefulWidget {
 class _InvitationScreenState extends State<InvitationScreen> {
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
         appBar: const MyAppBar(),
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -28,12 +30,12 @@ class _InvitationScreenState extends State<InvitationScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 35),
+                  padding: EdgeInsets.symmetric(vertical: MySize.size25),
                   child: CustomTextTwo(
                     text: "Invitation",
                     textStyle: TextStyle(
                       color: AppColors.primary,
-                      fontSize: 28,
+                      fontSize: MySize.size28,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w700,
                       height: 0,
@@ -57,7 +59,7 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         text: "Moderator Email Address",
                         textStyle: TextStyle(
                           color: AppColors.primary,
-                          fontSize: 18,
+                          fontSize: MySize.size18,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w600,
                         ),
@@ -69,7 +71,7 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         text: "Dear Saima Gill,",
                         textStyle: TextStyle(
                           color: AppColors.black,
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w500,
                         ),
@@ -82,7 +84,7 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         children: [
                           Image.asset(
                             "assets/images/png/think.png",
-                            height: 30,
+                            height: MySize.size30,
                           )
                         ],
                       ),
@@ -93,19 +95,19 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         text: AppTexts.generate_events_template_text1,
                         textStyle: TextStyle(
                           color: AppColors.black,
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: MySize.size20,
                       ),
                       CustomTextTwo(
                         text: AppTexts.invitationScreentext,
                         textStyle: TextStyle(
                           color: AppColors.black,
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w500,
                         ),
@@ -117,7 +119,7 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         text: "Sincerely,",
                         textStyle: TextStyle(
                           color: AppColors.black,
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w500,
                         ),
@@ -128,8 +130,8 @@ class _InvitationScreenState extends State<InvitationScreen> {
                       CustomTextTwo(
                         text: "Name",
                         textStyle: TextStyle(
-                          color: AppColors.black,
-                          fontSize: 16,
+                          color: const Color.fromRGBO(102, 102, 102, 1),
+                          fontSize: MySize.size18,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w500,
                         ),
@@ -141,7 +143,7 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         text: "Department",
                         textStyle: TextStyle(
                           color: AppColors.black,
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           fontFamily: 'Urbanist',
                           fontWeight: FontWeight.w500,
                         ),
@@ -156,11 +158,11 @@ class _InvitationScreenState extends State<InvitationScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     CustomButton(
-                        height: 50,
-                        width: 150,
+                        height: MySize.size50,
+                        width: MySize.size160,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: MySize.size18,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w500,
                         ),
@@ -168,14 +170,14 @@ class _InvitationScreenState extends State<InvitationScreen> {
                         text: "Accept",
                         onPressed: () {}),
                     SizedBox(
-                      width: 50,
+                      width: MySize.size18,
                     ),
                     CustomButton(
-                        height: 50,
-                        width: 150,
+                        height: MySize.size50,
+                        width: MySize.size160,
                         style: TextStyle(
                           color: AppColors.primary,
-                          fontSize: 18,
+                          fontSize: MySize.size18,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w500,
                         ),

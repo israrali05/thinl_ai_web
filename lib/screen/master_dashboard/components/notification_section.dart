@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 import '../../../utils/app_colors/colors.dart';
 import '../../../widget/custom_text/customtext.dart';
@@ -9,6 +10,7 @@ class NotificationSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
@@ -28,14 +30,14 @@ class NotificationSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: 37,
-                  width: 37,
+                  height: MySize.size35,
+                  width: MySize.size35,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(37),
                   ),
                   child: Image.asset(AppImages.avatar3),
                 ),
-                SizedBox(width: 8),
+                SizedBox(width: MySize.size10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -43,16 +45,16 @@ class NotificationSection extends StatelessWidget {
                     CustomText(
                       text: 'Lorem Ipsum is simly\ndummy text of  printing.',
                       textAlign: TextAlign.left,
-                      fontSize: 13,
+                      fontSize: MySize.size14,
                       fontFamily: 'Source Sans Pro',
                       fontWeight: FontWeight.w400,
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: MySize.size5),
                     CustomText(
                       text: 'Data:Time.',
                       textAlign: TextAlign.left,
                       fontFamily: 'Source Sans Pro',
-                      fontSize: 11,
+                      fontSize: MySize.size12,
                       fontWeight: FontWeight.w400,
                       color: AppColors.primary,
                     ),

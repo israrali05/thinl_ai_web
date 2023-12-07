@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/event_screen_controller.dart';
@@ -33,13 +34,14 @@ class _ModeratorReportState extends State<ModeratorReport> {
       SearchScreen(),
       SearchWithAI(),
     ];
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
       appBar: MyAppBar(),
       body: Container(
         margin: EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 50,
+          horizontal: MySize.size25,
+          vertical: MySize.size50,
         ),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +51,7 @@ class _ModeratorReportState extends State<ModeratorReport> {
                 text: "Reports",
                 style: AppTextStyles.mainHeadingStyle,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: MySize.size20),
               Consumer<EventScreenProvider>(
                   builder: (context, selectedIndexProvider, child) {
                 return Expanded(
@@ -57,7 +59,7 @@ class _ModeratorReportState extends State<ModeratorReport> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
+                        height: MySize.size40,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -77,8 +79,9 @@ class _ModeratorReportState extends State<ModeratorReport> {
                                     }
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    margin: EdgeInsets.only(right: 20),
+                                    padding: EdgeInsets.all(MySize.size10),
+                                    margin:
+                                        EdgeInsets.only(right: MySize.size20),
                                     decoration: ShapeDecoration(
                                       color:
                                           selectedIndexProvider.selectedIndex ==
@@ -101,7 +104,7 @@ class _ModeratorReportState extends State<ModeratorReport> {
                                       child: Text(
                                         buttonTitles[index],
                                         style: TextStyle(
-                                          fontSize: 13,
+                                          fontSize: MySize.size14,
                                           fontFamily: 'Source Sans Pro',
                                           fontWeight: FontWeight.w400,
                                           color: selectedIndexProvider
@@ -117,15 +120,15 @@ class _ModeratorReportState extends State<ModeratorReport> {
                               },
                             ),
                             Container(
-                                width: 300,
-                                height: 50,
+                                width: MySize.size300,
+                                height: MySize.size50,
                                 child: CustomTextFormField(
                                     hintText: 'Search',
                                     controller: _searchController)),
                           ],
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: MySize.size15),
                       Expanded(
                         child: selectedIndexProvider.selectedIndex == -1
                             ? AllScreen()

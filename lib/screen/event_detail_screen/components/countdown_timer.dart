@@ -3,6 +3,7 @@ import 'package:project22/screen/event_detail_screen/components/circular_progres
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text_2/custom_text_2.dart';
 
 class CountdownTimer extends StatelessWidget {
@@ -12,16 +13,17 @@ class CountdownTimer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: MySize.size25),
           child: CustomTextTwo(
             text: "Countdown Timer",
             textStyle: TextStyle(
               color: AppColors.primary,
-              fontSize: 20,
+              fontSize: MySize.size20,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w700,
               height: 0,
@@ -31,7 +33,7 @@ class CountdownTimer extends StatelessWidget {
         Row(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 35),
+              padding: EdgeInsets.only(left: MySize.size35),
               child: CircularProgressBar(
                 progress1: 0.2,
                 botomtext: "Days",
@@ -39,7 +41,7 @@ class CountdownTimer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 35),
+              padding: EdgeInsets.only(left: MySize.size35),
               child: CircularProgressBar(
                 progress1: 0.6,
                 botomtext: "Hours",
@@ -47,7 +49,7 @@ class CountdownTimer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 35),
+              padding: EdgeInsets.only(left: MySize.size35),
               child: CircularProgressBar(
                 progress1: 0.3,
                 botomtext: "Minutes",
@@ -55,7 +57,7 @@ class CountdownTimer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 35),
+              padding: EdgeInsets.only(left: MySize.size35),
               child: CircularProgressBar(
                 progress1: 0.9,
                 botomtext: "Seconds",
@@ -65,10 +67,10 @@ class CountdownTimer extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 35,
+          height: MySize.size35,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 35),
+          padding:  EdgeInsets.only(left: MySize.size35),
           child: CustomTextTwo(
             text: AppTexts.generate_events_template_text1,
             textStyle: AppTextStyles.hintStyle,

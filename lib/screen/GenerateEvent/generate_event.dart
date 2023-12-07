@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/custom_text_field/textformfield.dart';
@@ -17,7 +18,7 @@ class GenerateEventScreen extends StatelessWidget {
         TextEditingController();
     final TextEditingController voteController = TextEditingController();
     final TextEditingController eventMessage = TextEditingController();
-
+    MySize().init(context);
     return Scaffold(
       appBar: const MyAppBar(),
       backgroundColor: Colors.white,
@@ -32,7 +33,7 @@ class GenerateEventScreen extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: CustomText(
                         text: 'Generate Event Template',
-                        fontSize: 28,
+                        fontSize: MySize.size18,
                         fontWeight: FontWeight.w700,
                         letterSpacing: 2,
                       )),
@@ -47,7 +48,7 @@ class GenerateEventScreen extends StatelessWidget {
                                 alignment: Alignment.centerLeft,
                                 child: CustomText(
                                     text: 'Event Name',
-                                    fontSize: 18,
+                                    fontSize: MySize.size18,
                                     fontWeight: FontWeight.w400,
                                     letterSpacing: 2,
                                     color: AppColors.black)),
@@ -68,7 +69,7 @@ class GenerateEventScreen extends StatelessWidget {
                                 alignment: Alignment.centerLeft,
                                 child: CustomText(
                                     text: 'Date',
-                                    fontSize: 18,
+                                    fontSize: MySize.size18,
                                     fontWeight: FontWeight.w400,
                                     letterSpacing: 2,
                                     color: AppColors.black)),
@@ -88,7 +89,7 @@ class GenerateEventScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: CustomText(
                                     text: 'Time',
-                                    fontSize: 18,
+                                    fontSize: MySize.size18,
                                     fontWeight: FontWeight.w400,
                                     letterSpacing: 2,
                                     color: AppColors.black)),
@@ -116,7 +117,7 @@ class GenerateEventScreen extends StatelessWidget {
                                 alignment: Alignment.centerLeft,
                                 child: CustomText(
                                     text: 'Language',
-                                    fontSize: 18,
+                                    fontSize: MySize.size18,
                                     fontWeight: FontWeight.w400,
                                     letterSpacing: 2,
                                     color: AppColors.black)),
@@ -137,7 +138,7 @@ class GenerateEventScreen extends StatelessWidget {
                                 alignment: Alignment.centerLeft,
                                 child: CustomText(
                                     text: 'Max Result Length',
-                                    fontSize: 18,
+                                    fontSize: MySize.size18,
                                     fontWeight: FontWeight.w400,
                                     letterSpacing: 2,
                                     color: AppColors.black)),
@@ -158,7 +159,7 @@ class GenerateEventScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: CustomText(
                                     text: 'Tone of Vote',
-                                    fontSize: 18,
+                                    fontSize: MySize.size18,
                                     fontWeight: FontWeight.w400,
                                     letterSpacing: 2,
                                     color: AppColors.black)),
@@ -179,7 +180,7 @@ class GenerateEventScreen extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: CustomText(
                           text: 'Start with the prompt or use examples below',
-                          fontSize: 18,
+                          fontSize: MySize.size18,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 2,
                           color: AppColors.black)),
@@ -208,11 +209,11 @@ class GenerateEventScreen extends StatelessWidget {
                                 MaterialStatePropertyAll(AppColors.primary),
                             padding: MaterialStatePropertyAll(
                                 EdgeInsets.symmetric(
-                                    horizontal: 40, vertical: 20))),
+                                    horizontal: MySize.size40, vertical: MySize.size20))),
                         child: CustomText(
                           text: 'Send',
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           color: Colors.white,
                         )),
                   ),

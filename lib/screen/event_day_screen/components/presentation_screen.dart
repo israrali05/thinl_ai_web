@@ -4,6 +4,7 @@ import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 class PresentationScreen extends StatelessWidget {
@@ -11,37 +12,38 @@ class PresentationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return ListView(physics: BouncingScrollPhysics(), children: [
-      SizedBox(height: 200, width: 200, child: VideoPlayerWidget()),
+      SizedBox(height: MySize.size200, width: MySize.size200, child: VideoPlayerWidget()),
       Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: MySize.size10),
         child: CustomText(
           text: "Comments",
           textAlign: TextAlign.start,
-          style: AppTextStyles.headingTwo.copyWith(fontSize: 18),
+          style: AppTextStyles.headingTwo.copyWith(fontSize: MySize.size18),
         ),
       ),
       Commets(),
       SizedBox(
-        height: 10,
+        height: MySize.size10,
       ),
       SizedBox(
-        height: 35,
+        height: MySize.size35,
         child: TextField(
           style: AppTextStyles.hintStyle,
-          cursorHeight: 20,
+          cursorHeight: MySize.size20,
           cursorWidth: 1,
           cursorColor: AppColors.primary,
           decoration: InputDecoration(
             hintText: 'Enter Your Commects',
             hintStyle: AppTextStyles.btnStyle
                 .copyWith(color: AppColors.textGreyColor.withOpacity(0.5)),
-            contentPadding: EdgeInsets.only(left: 10),
+            contentPadding: EdgeInsets.only(left: MySize.size10),
             suffixIcon: Padding(
               padding: EdgeInsets.all(8.0),
               child: Image.asset(
                 AppImages.eventDaymessage,
-                height: 10,
+                height: MySize.size10,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -67,7 +69,7 @@ class Commets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 300,
+        height: MySize.size300,
         // padding: EdgeInsets.all(5.r),
         // decoration: BoxDecoration(
         //     borderRadius: BorderRadius.circular(5.r),
@@ -84,7 +86,7 @@ class Commets extends StatelessWidget {
                   style: AppTextStyles.hintStyle,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: MySize.size10,
                 ),
                 CustomText(
                   textAlign: TextAlign.justify,
@@ -92,7 +94,7 @@ class Commets extends StatelessWidget {
                   style: AppTextStyles.hintStyle,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: MySize.size10,
                 ),
                 CustomText(
                   textAlign: TextAlign.justify,
@@ -100,7 +102,7 @@ class Commets extends StatelessWidget {
                   style: AppTextStyles.hintStyle,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: MySize.size10,
                 ),
                 CustomText(
                   textAlign: TextAlign.justify,
@@ -108,7 +110,7 @@ class Commets extends StatelessWidget {
                   style: AppTextStyles.hintStyle,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: MySize.size10,
                 ),
               ],
             );

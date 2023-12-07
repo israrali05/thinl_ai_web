@@ -6,6 +6,7 @@ import 'package:project22/screen/event_day_screen/components/presentation_screen
 import 'package:project22/screen/event_day_screen/components/use_gen_ai.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/stepper_widget.dart/stepper_widget.dart';
@@ -27,13 +28,14 @@ class EventDayScreen extends StatelessWidget {
       IdeasScreenWidget(),
       UseGenAI(),
     ];
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
       appBar: MyAppBar(),
       body: Container(
         margin: EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 50,
+          horizontal: MySize.size25,
+          vertical: MySize.size50,
         ),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +46,7 @@ class EventDayScreen extends StatelessWidget {
                 style: AppTextStyles.mainHeadingStyle,
               ),
               SizedBox(
-                height: 120,
+                height: MySize.size160,
                 child: StepperScreen(
                   currentStep: 6,
                 ),
@@ -56,7 +58,7 @@ class EventDayScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
+                        height: MySize.size50,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
@@ -73,7 +75,7 @@ class EventDayScreen extends StatelessWidget {
                               },
                               child: Container(
                                 padding: EdgeInsets.all(10),
-                                margin: EdgeInsets.only(right: 20),
+                                margin: EdgeInsets.only(right: MySize.size20),
                                 decoration: ShapeDecoration(
                                   color: selectedIndexProvider.selectedIndex ==
                                           index
@@ -94,7 +96,7 @@ class EventDayScreen extends StatelessWidget {
                                   child: Text(
                                     buttonTitles[index],
                                     style: TextStyle(
-                                      fontSize: 13,
+                                      fontSize: MySize.size14,
                                       fontFamily: 'Source Sans Pro',
                                       fontWeight: FontWeight.w400,
                                       color:
@@ -110,7 +112,7 @@ class EventDayScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: MySize.size15),
                       Expanded(
                         child: selectedIndexProvider.selectedIndex == -1
                             ? DafaultContainerWidget()

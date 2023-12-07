@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 class ChatComponent extends StatefulWidget {
   ScrollController? scrollController;
@@ -39,12 +40,10 @@ class _ChatComponentState extends State<ChatComponent> {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Padding(
       padding:
-      EdgeInsets.only(bottom: MediaQuery
-          .of(context)
-          .viewInsets
-          .bottom),
+          EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: TextFormField(
         focusNode: _focusNode,
         scrollController: scrollController,
@@ -60,11 +59,10 @@ class _ChatComponentState extends State<ChatComponent> {
               borderRadius: BorderRadius.circular(5),
               borderSide: const BorderSide(color: Color(0xFFDEDCDC), width: 1)),
           hintText: "Message",
-          hintStyle: AppTextStyles.hintStyle
-              .copyWith(color: AppColors.grey),
+          hintStyle: AppTextStyles.hintStyle.copyWith(color: AppColors.grey),
           contentPadding: EdgeInsets.only(left: 10),
           prefixIcon: Padding(
-            padding: EdgeInsets.all(14),
+            padding: EdgeInsets.all(MySize.size14),
             // child: Image.asset(
             //   // AppImages.chatPrefixImage,
             //   // width: 10,
@@ -73,35 +71,35 @@ class _ChatComponentState extends State<ChatComponent> {
           ),
           suffixIcon: isFocused
               ? Padding(
-            padding: EdgeInsets.all(8.0),
-            child: IconButton(
-              icon: const Icon(
-                Icons.send,
-                color: AppColors.primary,
-                size: 20,
-              ),
-              onPressed: widget.onTap,
-            ),
-          )
+                  padding: EdgeInsets.all(8.0),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.send,
+                      color: AppColors.primary,
+                      size: 20,
+                    ),
+                    onPressed: widget.onTap,
+                  ),
+                )
               : Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Image.asset(
-                //   AppImages.voiceImage,
-                //   height: 18,
-                //   width: 18,
-                // ),
-                SizedBox(width: 10),
-                // Image.asset(
-                //   AppImages.cameraImage,
-                //   height: 18,
-                //   width: 18,
-                // ),
-              ],
-            ),
-          ),
+                  padding: EdgeInsets.all(MySize.size8),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Image.asset(
+                      //   AppImages.voiceImage,
+                      //   height: 18,
+                      //   width: 18,
+                      // ),
+                      SizedBox(width: 10),
+                      // Image.asset(
+                      //   AppImages.cameraImage,
+                      //   height: 18,
+                      //   width: 18,
+                      // ),
+                    ],
+                  ),
+                ),
         ),
       ),
     );

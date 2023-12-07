@@ -3,6 +3,7 @@ import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 class notificationContainer extends StatelessWidget {
@@ -10,15 +11,16 @@ class notificationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomText(
           text: "Notification",
-          style: AppTextStyles.mainHeadingStyle.copyWith(fontSize: 20),
+          style: AppTextStyles.mainHeadingStyle.copyWith(fontSize: MySize.size20),
         ),
         SizedBox(
-          height: 25,
+          height: MySize.size25,
         ),
         Container(
           padding: EdgeInsets.all(15),
@@ -37,11 +39,11 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size14)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle
-                      .copyWith(fontSize: 11, color: AppColors.primary)),
+                      .copyWith(fontSize: MySize.size12, color: AppColors.primary)),
             ),
             ListTile(
               leading: CircleAvatar(
@@ -50,11 +52,11 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size14)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle
-                      .copyWith(fontSize: 11, color: AppColors.primary)),
+                      .copyWith(fontSize: MySize.size12, color: AppColors.primary)),
             ),
             ListTile(
               leading: CircleAvatar(
@@ -63,11 +65,11 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size12)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle
-                      .copyWith(fontSize: 11, color: AppColors.primary)),
+                      .copyWith(fontSize: MySize.size12, color: AppColors.primary)),
             ),
             ListTile(
               leading: CircleAvatar(
@@ -76,11 +78,11 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size14)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle
-                      .copyWith(fontSize: 11, color: AppColors.primary)),
+                      .copyWith(fontSize: MySize.size12, color: AppColors.primary)),
             ),
             ListTile(
               leading: CircleAvatar(
@@ -89,11 +91,11 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size12)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle
-                      .copyWith(fontSize: 11, color: AppColors.primary)),
+                      .copyWith(fontSize: MySize.size12, color: AppColors.primary)),
             ),
             ListTile(
               leading: CircleAvatar(
@@ -102,11 +104,11 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size14)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle
-                      .copyWith(fontSize: 11, color: AppColors.primary)),
+                      .copyWith(fontSize: MySize.size12, color: AppColors.primary)),
             ),
             ListTile(
               leading: CircleAvatar(
@@ -115,7 +117,7 @@ class notificationContainer extends StatelessWidget {
               ),
               title: CustomText(
                   text: AppTexts.text1,
-                  style: AppTextStyles.hintStyle.copyWith(fontSize: 13)),
+                  style: AppTextStyles.hintStyle.copyWith(fontSize: MySize.size12)),
               subtitle: CustomText(
                   text: AppTexts.shortname,
                   style: AppTextStyles.hintStyle

@@ -3,6 +3,7 @@ import 'package:project22/screen/generate_event_templates_generate/components/te
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_button/custom_button.dart';
 import 'package:project22/widget/custom_media_query/custom_media_qeury.dart';
@@ -15,7 +16,7 @@ class GeneratesEventTemplates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CustomMediaQuery.init(context);
-
+    MySize().init(context);
     return Scaffold(
       appBar: const MyAppBar(),
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -31,7 +32,7 @@ class GeneratesEventTemplates extends StatelessWidget {
               // textAlign: TextAlign.left,
               textStyle: TextStyle(
                 color: AppColors.primary,
-                fontSize: 28,
+                fontSize: MySize.size28,
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w600,
                 height: 0,
@@ -39,13 +40,13 @@ class GeneratesEventTemplates extends StatelessWidget {
               //  : AppTextStyles.mainHeadingStyle,
             ),
             SizedBox(
-              height: 30,
+              height: MySize.size30,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.all(25),
+                  padding: EdgeInsets.all(MySize.size25),
                   width: CustomMediaQuery.responsiveWidth(25),
                   decoration: ShapeDecoration(
                     color: Colors.white,
@@ -88,10 +89,10 @@ class GeneratesEventTemplates extends StatelessWidget {
                           onPressed: () {},
                           text: "Generate",
                           backgroundColor: AppColors.primary,
-                          height: 50,
+                          height: MySize.size50,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: MySize.size16,
                             fontFamily: 'Urbanist',
                             fontWeight: FontWeight.w500,
                             height: 0,
@@ -101,10 +102,10 @@ class GeneratesEventTemplates extends StatelessWidget {
                       ]),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: MySize.size20,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 30, horizontal: 40),
+                  padding: EdgeInsets.symmetric(vertical: MySize.size30, horizontal: MySize.size40),
                   width: CustomMediaQuery.responsiveWidth(48),
                   decoration: ShapeDecoration(
                     color: Colors.white,
@@ -118,55 +119,55 @@ class GeneratesEventTemplates extends StatelessWidget {
                       text: AppTexts.generate_events_template_text1,
                       textStyle: TextStyle(
                         color: AppColors.black,
-                        fontSize: 16,
+                        fontSize: MySize.size16,
                         fontFamily: 'Urbanist',
                         fontWeight: FontWeight.w500,
                         // height: 0.08,
                       ),
                     ),
                     SizedBox(
-                      height: 22,
+                      height: MySize.size22,
                     ),
                     CustomTextTwo(
                       text: AppTexts.generate_events_template_text1,
                       textStyle: TextStyle(
                         color: AppColors.black,
-                        fontSize: 16,
+                        fontSize: MySize.size16,
                         fontFamily: 'Urbanist',
                         fontWeight: FontWeight.w500,
                         // height: 0.08,
                       ),
                     ),
                     SizedBox(
-                      height: 22,
+                      height: MySize.size22,
                     ),
                     CustomTextTwo(
                       text: AppTexts.generate_events_template_text1,
                       textStyle: TextStyle(
                         color: AppColors.black,
-                        fontSize: 16,
+                        fontSize: MySize.size16,
                         fontFamily: 'Urbanist',
                         fontWeight: FontWeight.w500,
                         // height: 0.08,
                       ),
                     ),
                     SizedBox(
-                      height: 70,
+                      height: MySize.size80,
                     ),
                     TextField(
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                        contentPadding: EdgeInsets.symmetric(horizontal: MySize.size20),
                         suffixIcon: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(MySize.size8),
                           child: Image.asset(
                             "assets/images/png/event_day_message_sent.png",
-                            height: 10,
+                            height: MySize.size10,
                           ),
                         ),
                         hintText: "Enter Your Meaage",
                         hintStyle: TextStyle(
                           color: AppColors.grey,
-                          fontSize: 14,
+                          fontSize: MySize.size14,
                           fontFamily: 'Source Sans Pro',
                           fontWeight: FontWeight.w400,
                           height: 0.09,

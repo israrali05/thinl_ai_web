@@ -4,6 +4,7 @@ import 'package:project22/screen/moderator_ideas/components/whole_container_data
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_button/custom_button.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
@@ -19,6 +20,7 @@ class InsightData extends StatefulWidget {
 class _InsightDataState extends State<InsightData> {
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return SingleChildScrollView(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +29,7 @@ class _InsightDataState extends State<InsightData> {
           Expanded(
             flex: 1,
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(MySize.size15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: AppColors.borderColor),
@@ -38,22 +40,22 @@ class _InsightDataState extends State<InsightData> {
                     label: "Event Name",
                     hintText: "Event Name",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Age ",
                     hintText: "Age",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Gender",
                     hintText: "Gender",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Department",
                     hintText: "Department",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Experience",
                     hintText: "Experience",
@@ -67,13 +69,13 @@ class _InsightDataState extends State<InsightData> {
               ),
             ),
           ),
-          SizedBox(width: 5),
+          SizedBox(width: MySize.size5),
           Expanded(
             flex: 2,
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(MySize.size15),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(MySize.size8),
                 border: Border.all(color: AppColors.borderColor, width: 0.4),
               ),
               child: ListView.builder(

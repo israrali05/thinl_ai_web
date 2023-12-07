@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/screen/ai_generate_ideas/ai_generate_ideas.dart';
 import 'package:project22/screen/circle_details_moderator/circle_details_moderator.dart';
-import 'package:project22/screen/circles_crearte/cirecles_create_screen.dart';
 import 'package:project22/screen/circles_screen/simple_cirecle_screen.dart';
 import 'package:project22/screen/event_day_screen/event_day_screen.dart';
 import 'package:project22/screen/event_detail_screen/event_detail_screen.dart';
@@ -13,10 +12,8 @@ import 'package:project22/screen/moderator_benchmark_screen/moderator_benchmark_
 import 'package:project22/screen/profile_screen/profile_screen.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_images/app_images.dart';
-import '../GenerateEvent/generate_event.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import '../master_dashboard/master_dashboard_view.dart';
-import '../moderator_ideas/moderator_ideas.dart';
-import '../moderator_report/moderator_report.dart';
 import '../participant_ai_assistant/participant_ai_assistant.dart';
 import '../participant_all_circle_ideas/participant_al_circle_ideas.dart';
 import '../participant_circle_leader_vote/ideas_briefing.dart';
@@ -62,6 +59,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: Row(
@@ -79,31 +77,31 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 45,
+                  SizedBox(
+                    height: MySize.size40,
                   ),
                   Center(
                     child: RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         children: [
                           TextSpan(
                               text: 'THINK.',
                               style: TextStyle(
-                                  fontSize: 31,
+                                  fontSize: MySize.size30,
                                   color: AppColors.primary,
                                   fontWeight: FontWeight.w700)),
                           TextSpan(
                               text: 'ai',
                               style: TextStyle(
-                                  fontSize: 31,
+                                  fontSize: MySize.size30,
                                   color: AppColors.secondary,
                                   fontWeight: FontWeight.w700)),
                         ],
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 35,
+                  SizedBox(
+                    height: MySize.size35,
                   ),
                   buildDrawerItem(
                       index: 0, image: AppImages.dashBoard, title: "Dashboard"),
@@ -206,8 +204,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return ListTile(
       leading: Image.asset(
         image,
-        width: 20,
-        height: 20,
+        width: MySize.size30,
+        height: MySize.size20,
         color: _selectedIndex == index ? Colors.white : AppColors.iconColor,
       ),
       trailing: trailingIcon != null ? Icon(trailingIcon) : null,

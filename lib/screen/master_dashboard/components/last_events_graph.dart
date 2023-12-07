@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../utils/app_colors/colors.dart';
@@ -8,8 +9,9 @@ class LastEventsGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Container(
-      height: 250,
+      height: MySize.size250,
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
