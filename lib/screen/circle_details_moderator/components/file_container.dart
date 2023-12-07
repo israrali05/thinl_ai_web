@@ -3,20 +3,21 @@ import 'package:project22/model/detail_cirecle_model.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/utils/app_images/app_images.dart';
-import 'package:project22/widget/custom_text/customtext.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 class FileContainer extends StatelessWidget {
   const FileContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return SingleChildScrollView(
       child: Column(
         children: [
           Row(
             children: [
               SizedBox(
-                height: 30,
+                height: MySize.size30,
               ),
               Expanded(
                   child: Container(
@@ -33,7 +34,7 @@ class FileContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 15,
+                        height: MySize.size15,
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 80 / 100,
@@ -81,8 +82,8 @@ class FileContainer extends StatelessWidget {
                                         DataCell(Row(
                                           children: [
                                             Container(
-                                              width: 25,
-                                              height: 25,
+                                              width: MySize.size25,
+                                              height: MySize.size25,
                                               margin: EdgeInsets.all(8),
                                               padding: EdgeInsets.all(2),
                                               decoration: BoxDecoration(
@@ -106,7 +107,7 @@ class FileContainer extends StatelessWidget {
                                             Text(participants[index].userCode)),
                                         DataCell(Image.asset(
                                           AppImages.threeDotsPng,
-                                          height: 20,
+                                          height: MySize.size20,
                                         ))
                                       ],
                                     );

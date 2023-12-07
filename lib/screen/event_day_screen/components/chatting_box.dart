@@ -4,6 +4,7 @@ import 'package:project22/model/every_day_model.dart';
 import 'package:project22/screen/event_day_screen/components/chat_textfield.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 class ChattingBox extends StatefulWidget {
@@ -53,10 +54,11 @@ class _ChattingBoxState extends State<ChattingBox> {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(MySize.size10),
           height: MediaQuery.of(context).size.height * 0.25,
           width: double.infinity,
           decoration: BoxDecoration(
@@ -64,7 +66,7 @@ class _ChattingBoxState extends State<ChattingBox> {
               borderRadius: BorderRadius.circular(5),
               border: Border.all(color: AppColors.whiteColor, width: 1)),
           child: Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(MySize.size15),
             child: ListView.builder(
               controller: scrollController,
               itemCount: messages.length,
@@ -76,14 +78,14 @@ class _ChattingBoxState extends State<ChattingBox> {
                       ? Alignment.topLeft
                       : Alignment.topRight,
                   child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 5),
+                    margin: EdgeInsets.symmetric(vertical: MySize.size5),
                     child: Bubble(
                         nip: BubbleNip.rightBottom,
                         radius: Radius.circular(0),
                         nipRadius: 0,
                         // nipHeight: 50,
                         nipWidth: 10,
-                        padding: BubbleEdges.all(4),
+                        padding: BubbleEdges.all(MySize.size4),
                         borderColor: AppColors.secondary,
                         child: CustomText(
                           textAlign: TextAlign.justify,
@@ -97,7 +99,7 @@ class _ChattingBoxState extends State<ChattingBox> {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: MySize.size18,
         ),
         ChatComponent(
           textController: _sendMessageController,

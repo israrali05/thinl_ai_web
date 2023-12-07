@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 class MessageText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return ListView.builder(
       itemCount: 6,
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Container(
-          margin: EdgeInsets.all(10),
-          padding: EdgeInsets.all(20),
+          margin: EdgeInsets.all(MySize.size10),
+          padding: EdgeInsets.all(MySize.size10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Color(0xffFAFAFA),

@@ -5,6 +5,7 @@ import 'package:project22/screen/feed_back_screen/components/custom_checkbox.dar
 import 'package:project22/screen/feed_back_screen/components/message_box_widget.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/custom_textfield_label/custom_textfield_label.dart';
@@ -26,7 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: AppColors.textWhiteColor,
         appBar: MyAppBar(),
         body: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: EdgeInsets.all(MySize.size30),
             child: SingleChildScrollView(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -41,8 +42,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Ourbotton(
                             text: "Edit Profile",
-                            height: 35,
-                            width: 120,
+                            height: MySize.size35,
+                            width: MySize.size120,
                             backgroundColor: AppColors.primary,
                             borderRadius: 5,
                             textStyle: AppTextStyles.hintStyle
@@ -50,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       children: [
@@ -60,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           hintText: "First Name",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -70,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       children: [
@@ -80,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           hintText: "Father Name",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -88,7 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           hintText: "DoB",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -98,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       children: [
@@ -108,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           hintText: "Department",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -116,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           hintText: "Working Experience",
                         )),
                         SizedBox(
-                          width: 20,
+                          width: MySize.size20,
                         ),
                         Expanded(
                             child: CustomTextField(
@@ -126,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Expanded(
@@ -136,7 +137,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             hintText: "Intersts",
                           )),
                       SizedBox(
-                        width: 20,
+                        width: MySize.size20,
                       ),
                       Expanded(
                         child: Column(
@@ -145,10 +146,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             CustomText(
                               text: "Do you want join this event?",
                               style: AppTextStyles.hintStyle
-                                  .copyWith(fontSize: 18),
+                                  .copyWith(fontSize: MySize.size18),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: MySize.size20,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -165,7 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         },
                                       ),
                                       SizedBox(
-                                        width: 20,
+                                        width: MySize.size20,
                                       ),
                                       Text('Anonymously',
                                           style: AppTextStyles.hintStyle),
@@ -173,7 +174,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   );
                                 }),
                                 SizedBox(
-                                  width: 20,
+                                  width: MySize.size20,
                                 ),
                                 Consumer<CheckboxController2>(
                                     builder: (context, model, child) {
@@ -186,7 +187,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         },
                                       ),
                                       SizedBox(
-                                        width: 10,
+                                        width: MySize.size10,
                                       ),
                                       Text('Good',
                                           style: AppTextStyles.hintStyle),
@@ -200,15 +201,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ]),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Ourbotton(
                             text: "Submit",
-                            height: 35,
-                            width: 70,
+                            height: MySize.size35,
+                            width: MySize.size80,
                             backgroundColor: AppColors.primary,
                             borderRadius: 5,
                             textStyle: AppTextStyles.hintStyle

@@ -5,10 +5,10 @@ import 'package:project22/screen/event_day_screen/components/video_player.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/paragraph_widget_text/paragraph_widget_text.dart';
 import 'package:provider/provider.dart';
-
 import '../../../widget/our_botton/our_botton.dart';
 import '../../feed_back_screen/components/message_box_widget.dart';
 
@@ -24,15 +24,16 @@ class IdeasScreenWidget extends StatelessWidget {
       'Improve',
       'Enchance',
     ];
+    MySize().init(context);
     return ListView(
       children: [
         VideoPlayerWidget(),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: MySize.size25),
           child: CustomText(
             textAlign: TextAlign.start,
             text: "Ideas",
-            style: AppTextStyles.headingTwo.copyWith(fontSize: 18),
+            style: AppTextStyles.headingTwo.copyWith(fontSize: MySize.size18),
           ),
         ),
         IdeasWidget(buttonTitles: buttonTitles)
@@ -52,7 +53,8 @@ class IdeasWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      padding: EdgeInsets.symmetric(
+          vertical: MySize.size10, horizontal: MySize.size15),
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(color: Color(0xFFF9F9F9)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -63,12 +65,12 @@ class IdeasWidget extends StatelessWidget {
         Consumer<IdeasControllers>(
             builder: (context, selectedIndexProvider, child) {
           return Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: MySize.size10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 25,
+                  height: MySize.size25,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -79,8 +81,9 @@ class IdeasWidget extends StatelessWidget {
                           selectedIndexProvider.selectedIndex = index;
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 2),
-                          margin: EdgeInsets.only(right: 3),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: MySize.size2),
+                          margin: EdgeInsets.only(right: MySize.size3),
                           decoration: ShapeDecoration(
                             color: selectedIndexProvider.selectedIndex == index
                                 ? AppColors.primary
@@ -99,7 +102,7 @@ class IdeasWidget extends StatelessWidget {
                             child: Text(
                               buttonTitles[index],
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: MySize.size12,
                                 fontFamily: 'Source Sans Pro',
                                 fontWeight: FontWeight.w400,
                                 color:
@@ -125,12 +128,12 @@ class IdeasWidget extends StatelessWidget {
         Consumer<IdeasControllers>(
             builder: (context, selectedIndexProvider, child) {
           return Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: MySize.size10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 25,
+                  height: MySize.size25,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -141,8 +144,9 @@ class IdeasWidget extends StatelessWidget {
                           selectedIndexProvider.selectedIndex = index;
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5),
-                          margin: EdgeInsets.only(right: 5),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: MySize.size5),
+                          margin: EdgeInsets.only(right: MySize.size5),
                           decoration: ShapeDecoration(
                             color: selectedIndexProvider.selectedIndex == index
                                 ? AppColors.primary
@@ -161,7 +165,7 @@ class IdeasWidget extends StatelessWidget {
                             child: Text(
                               buttonTitles[index],
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: MySize.size12,
                                 fontFamily: 'Source Sans Pro',
                                 fontWeight: FontWeight.w400,
                                 color:
@@ -187,12 +191,12 @@ class IdeasWidget extends StatelessWidget {
         Consumer<IdeasControllers>(
             builder: (context, selectedIndexProvider, child) {
           return Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: MySize.size10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 25,
+                  height: MySize.size25,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -203,8 +207,9 @@ class IdeasWidget extends StatelessWidget {
                           selectedIndexProvider.selectedIndex = index;
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5),
-                          margin: EdgeInsets.only(right: 5),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: MySize.size5),
+                          margin: EdgeInsets.only(right: MySize.size5),
                           decoration: ShapeDecoration(
                             color: selectedIndexProvider.selectedIndex == index
                                 ? AppColors.primary
@@ -223,7 +228,7 @@ class IdeasWidget extends StatelessWidget {
                             child: Text(
                               buttonTitles[index],
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: MySize.size12,
                                 fontFamily: 'Source Sans Pro',
                                 fontWeight: FontWeight.w400,
                                 color:
@@ -249,12 +254,12 @@ class IdeasWidget extends StatelessWidget {
         Consumer<IdeasControllers>(
             builder: (context, selectedIndexProvider, child) {
           return Padding(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.symmetric(vertical: MySize.size10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 25,
+                  height: MySize.size25,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -265,8 +270,8 @@ class IdeasWidget extends StatelessWidget {
                           selectedIndexProvider.selectedIndex = index;
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5),
-                          margin: EdgeInsets.only(right: 5),
+                          padding: EdgeInsets.symmetric(horizontal: MySize.size54),
+                          margin: EdgeInsets.only(right: MySize.size5),
                           decoration: ShapeDecoration(
                             color: selectedIndexProvider.selectedIndex == index
                                 ? AppColors.primary
@@ -285,7 +290,7 @@ class IdeasWidget extends StatelessWidget {
                             child: Text(
                               buttonTitles[index],
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: MySize.size12,
                                 fontFamily: 'Source Sans Pro',
                                 fontWeight: FontWeight.w400,
                                 color:
@@ -309,20 +314,20 @@ class IdeasWidget extends StatelessWidget {
           style: AppTextStyles.hintStyle,
         ),
         SizedBox(
-          height: 20,
+          height: MySize.size20,
         ),
-        SizedBox(height: 20),
+        SizedBox(height: MySize.size20),
         MessageBoxWidget(),
         SizedBox(
-          height: 20,
+          height: MySize.size20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Ourbotton(
                 text: "Submit",
-                height: 35,
-                width: 70,
+                height: MySize.size35,
+                width: MySize.size60,
                 backgroundColor: AppColors.primary,
                 borderRadius: 5,
                 textStyle: AppTextStyles.hintStyle

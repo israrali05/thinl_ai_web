@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:project22/screen/drawer/drawer.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/custom_text_form_field/custom_text_form_field.dart';
 
@@ -30,13 +29,14 @@ class _LoginScreenState extends State<LoginScreen> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     bool isWeb = screenWidth > 600;
+    MySize().init(context);
 
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 400,
+            horizontal: MySize.scaleFactorWidth * 120,
           ),
           child: SingleChildScrollView(
             child: Column(
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: isWeb ? screenHeight * 0.04 : screenHeight * 0.02,
                 ),
                 Container(
-                  width: 542,
+                  width: MySize.scaleFactorWidth * 120,
                   padding: EdgeInsets.all(
                       isWeb ? screenWidth * 0.02 : screenWidth * 0.02),
                   decoration: BoxDecoration(
@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ? AppColors.textLiteBlueColor
                                     : Colors.white,
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: screenWidth * 0.04,
+                                  horizontal: MySize.safeWidth * 0.04,
                                   vertical: screenHeight * 0.02,
                                 ),
                                 shape: RoundedRectangleBorder(
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 // width: screenWidth * 0.03,
                                 // height: screenHeight * 0.03,
                                 // width: 20,
-                                height: 20,
+                                height: MySize.size20,
                                 color: isLoginSelected == true
                                     ? AppColors.textLiteBlueColor
                                     : AppColors.textWhiteColor,
@@ -172,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 hintText: "Email",
                                 pIcon: Image.asset(
                                   AppImages.emailLogin,
-                                  scale: screenWidth * 0.02,
+                                  scale: 2.5,
                                 ),
                               ),
                               SizedBox(
@@ -184,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 hintText: "Password",
                                 pIcon: Image.asset(
                                   AppImages.profileLogin,
-                                  scale: screenWidth * 0.02,
+                                  scale: 2.5,
                                 ),
                               ),
                               SizedBox(
@@ -240,6 +240,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                                 style: ElevatedButton.styleFrom(
+                                  foregroundColor: AppColors.whiteColor,
+                                  backgroundColor: AppColors.primary,
                                   fixedSize: Size(
                                     screenWidth,
                                     screenHeight * 0.048,
@@ -376,6 +378,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   // style:AppTextStyles.btnStyle,
                                 ),
                                 style: ElevatedButton.styleFrom(
+                                  foregroundColor: AppColors.whiteColor,
+                                  backgroundColor: AppColors.primary,
                                   fixedSize: Size(
                                     screenWidth,
                                     screenHeight * 0.048,

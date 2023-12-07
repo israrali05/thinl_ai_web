@@ -6,6 +6,8 @@ import 'package:project22/screen/event_day_screen/components/video_player.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
+import '../../../utils/my_size/mysize.dart';
+
 class DafaultContainerWidget extends StatefulWidget {
   const DafaultContainerWidget({
     super.key,
@@ -43,8 +45,9 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
       'Improve',
       'Enchance',
     ];
+    MySize().init(context);
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(MySize.size20),
       child: ListView(
         physics: BouncingScrollPhysics(),
         children: [
@@ -53,7 +56,7 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                  height: 300,
+                  height: MySize.size300,
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: VideoPlayerWidget()),
               Container(
@@ -66,7 +69,7 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(MySize.size5),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -75,7 +78,7 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
                         style: AppTextStyles.mainHeadingStyle,
                       ),
                       SizedBox(
-                        height: 20,
+                        height: MySize.size20,
                       ),
                       Commets(),
                     ]),
@@ -83,7 +86,7 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
             ],
           ),
           SizedBox(
-            height: 20,
+            height: MySize.size20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,25 +100,25 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(MySize.size5),
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 25),
+                        padding: EdgeInsets.symmetric(vertical: MySize.size25),
                         child: CustomText(
                           textAlign: TextAlign.start,
                           text: "Chatting",
                           style: AppTextStyles.headingTwo
-                            ..copyWith(fontSize: 16),
+                            ..copyWith(fontSize: MySize.size16),
                         ),
                       ),
                       ChattingBox(),
                     ],
                   )),
               SizedBox(
-                width: 30,
+                width: MySize.size30,
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.3,
@@ -126,7 +129,7 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(MySize.size18),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -135,7 +138,7 @@ class _DafaultContainerWidgetState extends State<DafaultContainerWidget> {
                       style: AppTextStyles.mainHeadingStyle,
                     ),
                     SizedBox(
-                      height: 15,
+                      height: MySize.size15,
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.4,

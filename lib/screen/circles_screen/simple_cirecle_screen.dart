@@ -4,6 +4,7 @@ import 'package:project22/screen/circles_screen/components/table_row_widget.dart
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/stepper_widget.dart/stepper_widget.dart';
@@ -13,13 +14,14 @@ class SimpleCircleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
       appBar: MyAppBar(),
       body: Container(
         margin: EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 50,
+          horizontal: MySize.size25,
+          vertical: MySize.size50,
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -37,10 +39,10 @@ class SimpleCircleScreen extends StatelessWidget {
                       children: [
                         Image.asset(
                           AppImages.notificationcircleImage,
-                          height: 25,
+                          height: MySize.size25,
                         ),
                         SizedBox(
-                          width: 10,
+                          width: MySize.size10,
                         ),
                         CustomText(
                           text: "Notification",
@@ -51,12 +53,13 @@ class SimpleCircleScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                    height: 120,
+                    height: MySize.size160,
                     child: StepperScreen(
                       currentStep: 4,
                     )),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                  padding: EdgeInsets.symmetric(
+                      vertical: MySize.size10, horizontal: MySize.size5),
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -72,11 +75,11 @@ class SimpleCircleScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: MySize.size20,
                 ),
                 TableHeadingWidget(),
                 SizedBox(
-                  height: 20,
+                  height: MySize.size20,
                 ),
                 TableRowWidget(),
               ]),

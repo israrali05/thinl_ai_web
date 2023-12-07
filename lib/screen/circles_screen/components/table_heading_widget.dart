@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 class TableHeadingWidget extends StatelessWidget {
   const TableHeadingWidget({
@@ -9,6 +10,7 @@ class TableHeadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Container(
       decoration: BoxDecoration(
         color: Colors.blue, // Background color of the row
@@ -30,7 +32,8 @@ class TableHeadingWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Darlene',
                       style: AppTextStyles.hintStyle.copyWith(
-                          color: AppColors.textWhiteColor, fontSize: 18)),
+                          color: AppColors.textWhiteColor,
+                          fontSize: MySize.size18)),
                 ),
               ),
               TableCell(
@@ -38,7 +41,8 @@ class TableHeadingWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Female',
                       style: AppTextStyles.hintStyle.copyWith(
-                          color: AppColors.textWhiteColor, fontSize: 18)),
+                          color: AppColors.textWhiteColor,
+                          fontSize: MySize.size18)),
                 ),
               ),
               TableCell(
@@ -46,7 +50,8 @@ class TableHeadingWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Manning',
                       style: AppTextStyles.hintStyle.copyWith(
-                          color: AppColors.textWhiteColor, fontSize: 18)),
+                          color: AppColors.textWhiteColor,
+                          fontSize: MySize.size18)),
                 ),
               ),
               TableCell(
@@ -54,7 +59,8 @@ class TableHeadingWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text('2 Years',
                       style: AppTextStyles.hintStyle.copyWith(
-                          color: AppColors.textWhiteColor, fontSize: 18)),
+                          color: AppColors.textWhiteColor,
+                          fontSize: MySize.size18)),
                 ),
               ),
               TableCell(
@@ -62,7 +68,7 @@ class TableHeadingWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Chief Executive ',
                       style: AppTextStyles.hintStyle.copyWith(
-                          color: AppColors.textWhiteColor, fontSize: 18)),
+                          color: AppColors.textWhiteColor, fontSize: MySize.size18)),
                 ),
               ),
               TableCell(
@@ -70,7 +76,7 @@ class TableHeadingWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Recent',
                       style: AppTextStyles.hintStyle.copyWith(
-                          color: AppColors.textWhiteColor, fontSize: 18)),
+                          color: AppColors.textWhiteColor, fontSize: MySize.size18)),
                 ),
               ),
             ],

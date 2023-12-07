@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 class TableRowWidget extends StatelessWidget {
   const TableRowWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Container(
       decoration: ShapeDecoration(
         color: Colors.white,
@@ -170,7 +172,7 @@ class TableDataCellWiget extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Text(text,
             style: AppTextStyles.hintStyle.copyWith(
-              fontSize: 18,
+              fontSize: MySize.size18,
             )),
       ),
     );

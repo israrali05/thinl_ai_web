@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 import '../../../utils/app_colors/colors.dart';
 import '../../../utils/app_constants/app_constant.dart';
@@ -11,9 +12,10 @@ class WholeContainerData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
-      padding: EdgeInsets.all(15),
-      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.all(MySize.size15),
+      margin: EdgeInsets.all(MySize.size5),
       decoration: BoxDecoration(
         color: AppColors.containerColor,
         borderRadius: BorderRadius.circular(8),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 class CircularProgressBar extends StatelessWidget {
@@ -15,17 +16,18 @@ class CircularProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Column(
       children: [
         Container(
-          width: 120.0,
-          height: 120.0,
+          width: MySize.size120,
+          height: MySize.size120,
           child: Stack(
             children: [
               Center(
                 child: Container(
-                  width: 150.0,
-                  height: 150.0,
+                  width: MySize.size140,
+                  height: MySize.size140,
                   child: CircularProgressIndicator(
                     value:
                         progress1, // Change the value to update progress (0.0 to 1.0)
@@ -44,7 +46,7 @@ class CircularProgressBar extends StatelessWidget {
                     centertext, // Display progress percentage
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 14,
+                      fontSize: MySize.size14,
                       fontFamily: 'Urbanist',
                       fontWeight: FontWeight.w600,
                       height: 0.09,
@@ -55,12 +57,12 @@ class CircularProgressBar extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: MySize.size20),
         CustomText(
           text: botomtext,
           style: TextStyle(
             color: Color(0xFF666666),
-            fontSize: 14,
+            fontSize: MySize.size14,
             fontFamily: 'Source Sans Pro',
             fontWeight: FontWeight.w600,
             height: 0.09,

@@ -3,9 +3,9 @@ import 'package:project22/screen/master_dashboard/components/chart_component.dar
 import 'package:project22/screen/master_dashboard/components/notification_section.dart';
 import 'package:project22/screen/master_dashboard/components/previous_event.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
-import 'package:project22/widget/custom_text_field/textformfield.dart';
 
 import '../../utils/app_colors/colors.dart';
 import '../../utils/app_constants/app_constant.dart';
@@ -18,12 +18,13 @@ class MasterDashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: MyAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(30.0),
+          padding: EdgeInsets.all(MySize.size30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +35,7 @@ class MasterDashboardView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 15),
+                      padding: EdgeInsets.symmetric(vertical: MySize.size15),
                       child: CustomText(
                         text: 'Dashboard',
                         style: AppTextStyles.headingTwo,
@@ -53,12 +54,12 @@ class MasterDashboardView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: MySize.scaleFactorHeight * 20),
                     CustomText(
                       text: 'Previous Events',
                       style: AppTextStyles.headingTwo,
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: MySize.scaleFactorHeight * 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -76,12 +77,12 @@ class MasterDashboardView extends StatelessWidget {
                             eventDetail: AppTexts.eventDetail),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: MySize.scaleFactorHeight * 30),
                     CustomText(
                       text: 'Coming Up Events',
                       style: AppTextStyles.headingTwo,
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: MySize.scaleFactorHeight * 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -93,9 +94,7 @@ class MasterDashboardView extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                width: 15,
-              ),
+              SizedBox(height: MySize.scaleFactorWidth * 20),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,26 +103,28 @@ class MasterDashboardView extends StatelessWidget {
                     CustomText(
                       text: 'Notifications',
                       color: AppColors.primary,
-                      fontSize: 26,
+                      fontSize: MySize.size16,
                       fontWeight: FontWeight.w600,
                     ),
                     NotificationSection(),
                     SizedBox(
-                      height: 20,
+                      height: MySize.size20,
                     ),
                     CustomText(
                       text: 'Last Events',
                       color: AppColors.primary,
-                      fontSize: 26,
+                      fontSize: MySize.size26,
                       fontFamily: 'Source Sans Pro',
                       fontWeight: FontWeight.w600,
                     ),
                     LastEventsGraph(),
-                    SizedBox(height: 10),
+                    SizedBox(
+                      height: MySize.size10,
+                    ),
                     CustomText(
                       text: 'Last Successful Events',
                       color: AppColors.primary,
-                      fontSize: 16,
+                      fontSize: MySize.size16,
                       fontFamily: 'Source Sans Pro',
                       fontWeight: FontWeight.w400,
                     )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 import '../../utils/app_colors/colors.dart';
 
@@ -11,6 +12,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return AppBar(
       surfaceTintColor: AppColors.whiteColor,
       elevation: 2,
@@ -28,8 +30,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         buildAddEventButton(),
         IconButton(
-          icon: const Icon(Icons.notifications_none,
-              color: AppColors.primary, size: 30),
+          icon: Icon(Icons.notifications_none,
+              color: AppColors.primary, size: MySize.size30),
           onPressed: () {},
         ),
         buildProfileAvatar(),
@@ -69,7 +71,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       // width: 128,
       // height: 45,
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: EdgeInsets.symmetric(
+          horizontal: MySize.size30, vertical: MySize.size10),
       decoration: ShapeDecoration(
         color: Color(0xFF3871C1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
@@ -83,8 +86,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget buildProfileAvatar() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: MySize.size10),
       child: CircleAvatar(
         backgroundImage: AssetImage(AppImages.profile),
       ),
@@ -92,12 +95,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget buildProfileName() {
-    return const Padding(
-      padding: EdgeInsets.all(10),
+    return Padding(
+      padding: EdgeInsets.all(MySize.size10),
       child: Center(
         child: Text(
           'Saima Gill',
-          style: TextStyle(color: AppColors.primary, fontSize: 19),
+          style: TextStyle(color: AppColors.primary, fontSize: MySize.size19),
         ),
       ),
     );

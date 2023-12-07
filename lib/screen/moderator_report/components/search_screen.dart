@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 import '../../../utils/app_colors/colors.dart';
@@ -13,6 +14,7 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return SingleChildScrollView(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +23,7 @@ class SearchScreen extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(MySize.size15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: AppColors.borderColor),
@@ -32,22 +34,22 @@ class SearchScreen extends StatelessWidget {
                     label: "Event Name",
                     hintText: "Event Name",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Age ",
                     hintText: "Age",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Gender",
                     hintText: "Gender",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Department",
                     hintText: "Department",
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: MySize.size5),
                   CustomTextField(
                     label: "Experience",
                     hintText: "Experience",
@@ -61,11 +63,11 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 5),
+          SizedBox(width: MySize.size54),
           Expanded(
             flex: 2,
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(MySize.size15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: AppColors.borderColor, width: 0.4),
@@ -75,13 +77,13 @@ class SearchScreen extends StatelessWidget {
                   ListView.builder(
                     itemCount: 4,
                     shrinkWrap: true,
-                    padding: EdgeInsets.only(bottom: 5),
+                    padding: EdgeInsets.only(bottom: MySize.size5),
                     itemBuilder: (context, index) {
                       return CustomText(
                         text:
                             'Q${index + 1}: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been?',
                         style: AppTextStyles.font14To400.copyWith(
-                          fontSize: 16,
+                          fontSize: MySize.size16,
                           fontFamily: 'Source Sans Pro',
                         ),
                       );

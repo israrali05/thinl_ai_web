@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
 import '../../../utils/app_colors/colors.dart';
@@ -16,6 +17,7 @@ class PreviousEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Expanded(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.2,
@@ -28,7 +30,7 @@ class PreviousEvent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 118,
+              height: MySize.size120,
               width: double.maxFinite,
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
@@ -42,7 +44,8 @@ class PreviousEvent extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MySize.size20, vertical: MySize.size20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -50,16 +53,16 @@ class PreviousEvent extends StatelessWidget {
                     text: eventName,
                     style: TextStyle(
                         color: AppColors.secondary,
-                        fontSize: 16,
+                        fontSize: MySize.size16,
                         fontFamily: 'Source Sans Pro',
                         fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: MySize.size10),
                   CustomText(
                     text: eventDetail,
                     style: TextStyle(
                       color: AppColors.textGreyColor,
-                      fontSize: 13,
+                      fontSize: MySize.size14,
                       fontFamily: 'Source Sans Pro',
                       fontWeight: FontWeight.w400,
                     ),

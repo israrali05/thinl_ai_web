@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/main.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/stepper_widget.dart/stepper_widget.dart';
 import '../../utils/app_colors/colors.dart';
@@ -14,16 +15,17 @@ class ParticipantAllCircleIdeas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       appBar: MyAppBar(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: EdgeInsets.all(MySize.size15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: MySize.size30),
               CustomText(
                 text: 'All Circle’s Top Ideas',
                 style: AppTextStyles.mainHeadingStyle,
@@ -33,7 +35,7 @@ class ParticipantAllCircleIdeas extends StatelessWidget {
               //     child: StepperScreen(
               //       currentStep: 5,
               //     )),
-              SizedBox(height: 20),
+              SizedBox(height: MySize.size20),
               ListView.builder(
                   itemCount: 8,
                   shrinkWrap: true,

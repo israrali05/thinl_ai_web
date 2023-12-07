@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_button/custom_button.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
@@ -13,11 +14,12 @@ class ParticipantAiAssistant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       appBar: MyAppBar(),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(MySize.size25),
         child: ListView(
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -36,7 +38,7 @@ class ParticipantAiAssistant extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(MySize.size10),
                         height: MediaQuery.of(context).size.height * 0.8,
                         decoration: BoxDecoration(
                           border: Border.all(color: AppColors.borderColor),
@@ -47,8 +49,8 @@ class ParticipantAiAssistant extends StatelessWidget {
                           children: [
                             Container(
                               height: MediaQuery.of(context).size.height * 0.6,
-                              padding: EdgeInsets.all(5),
-                              margin: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(MySize.size5),
+                              margin: EdgeInsets.all(MySize.size10),
                               child: CustomTextFormField(
                                 maxLines: 13,
                                 hintText: 'Enter Your Promt',
@@ -56,7 +58,7 @@ class ParticipantAiAssistant extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.all(10),
+                              margin: EdgeInsets.all(MySize.size10),
                               child: CustomButton(
                                 text: 'Generate',
                                 style: TextStyle(
@@ -75,7 +77,7 @@ class ParticipantAiAssistant extends StatelessWidget {
                   flex: 2,
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.8,
-                    margin: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(MySize.size10),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.borderColor),
                       borderRadius: BorderRadius.circular(5),
@@ -86,8 +88,8 @@ class ParticipantAiAssistant extends StatelessWidget {
                       reverse: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          margin: EdgeInsets.all(10),
-                          padding: EdgeInsets.all(20),
+                          margin: EdgeInsets.all(MySize.size10),
+                          padding: EdgeInsets.all(MySize.size20),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             color: Color(0xffFAFAFA),
@@ -98,7 +100,7 @@ class ParticipantAiAssistant extends StatelessWidget {
                           child: CustomText(
                             text: AppTexts.customLoremText,
                             fontFamily: 'Source Sans Pro',
-                            fontSize: 16,
+                            fontSize: MySize.size16,
                             color: AppColors.grey,
                             fontWeight: FontWeight.w400,
                           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/event_screen_controller.dart';
@@ -28,7 +29,7 @@ class _UseGenAIState extends State<UseGenAI> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-
+    MySize().init(context);
     return SingleChildScrollView(
       child: Container(
         height: height,
@@ -49,7 +50,7 @@ class _UseGenAIState extends State<UseGenAI> {
             Consumer<IdeasControllers>(
                 builder: (context, selectedIndexProvider, child) {
               return Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.symmetric(vertical: MySize.size10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -65,7 +66,7 @@ class _UseGenAIState extends State<UseGenAI> {
                               selectedIndexProvider.selectedIndex = index;
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              padding: EdgeInsets.symmetric(horizontal: MySize.size5),
                               margin: EdgeInsets.only(right: 5),
                               decoration: ShapeDecoration(
                                 color:
@@ -87,7 +88,7 @@ class _UseGenAIState extends State<UseGenAI> {
                                 child: Text(
                                   buttonTitles[index],
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: MySize.size12,
                                     fontFamily: 'Source Sans Pro',
                                     fontWeight: FontWeight.w400,
                                     color:
@@ -107,7 +108,7 @@ class _UseGenAIState extends State<UseGenAI> {
                 ),
               );
             }),
-            SizedBox(height: 30),
+            SizedBox(height: MySize.size30),
 
             ///voice and text box
             MessageBoxWidget(),

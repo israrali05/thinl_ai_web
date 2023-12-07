@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_textfield_label/custom_textfield_label.dart';
 
 class OverviewConatiner extends StatelessWidget {
@@ -6,6 +7,7 @@ class OverviewConatiner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return SingleChildScrollView(
       child: Column(children: [
         Row(
@@ -26,7 +28,7 @@ class OverviewConatiner extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 20,
+          height: MySize.size20,
         ),
         Row(
           children: [
@@ -46,7 +48,7 @@ class OverviewConatiner extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 20,
+          height: MySize.size20,
         ),
         Row(
           children: [
@@ -66,7 +68,7 @@ class OverviewConatiner extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 20,
+          height: MySize.size20,
         ),
       ]),
     );

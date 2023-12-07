@@ -5,6 +5,7 @@ import 'package:project22/screen/master_dashboard/components/last_events_graph.d
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/custom_textfield_label/custom_textfield_label.dart';
@@ -16,11 +17,12 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: MyAppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(MySize.size25),
         child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -28,7 +30,7 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
               text: "Benchmarks",
               style: AppTextStyles.mainHeadingStyle,
             ),
-            SizedBox(height: 30),
+            SizedBox(height: MySize.size30),
             Row(
               children: [
                 Expanded(
@@ -37,7 +39,7 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
                   label: "Event Name",
                 )),
                 SizedBox(
-                  width: 20,
+                  width: MySize.size20,
                 ),
                 Expanded(
                     child: CustomTextField(
@@ -47,24 +49,24 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: MySize.size20,
             ),
             CustomTextField(
               hintText: "Event Location",
               label: "California, United States",
             ),
             SizedBox(
-              height: 20,
+              height: MySize.size20,
             ),
             CustomText(
               text: "Event Description",
               style: AppTextStyles.headingTwo,
             ),
             SizedBox(
-              height: 20,
+              height: MySize.size20,
             ),
             Container(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(MySize.size20),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.grey.withOpacity(0.3),
@@ -78,14 +80,14 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: MySize.size20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: SizedBox(
-                    height: 200,
+                    height: MySize.size200,
                     // width: 200,
                     child: VideoPlayerWidget(),
                   ),
@@ -98,7 +100,7 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: MySize.size40,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 30 / 100,
@@ -110,7 +112,7 @@ class ModeratorBenchMarkScreen extends StatelessWidget {
                     style: AppTextStyles.headingTwo,
                   ),
                   SizedBox(
-                    height: 20,
+                    height: MySize.size20,
                   ),
                   RatingStar(
                     stars: "Target",

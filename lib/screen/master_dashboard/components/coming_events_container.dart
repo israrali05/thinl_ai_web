@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 
 import '../../../utils/app_colors/colors.dart';
 import '../../../utils/app_images/app_images.dart';
@@ -16,6 +17,7 @@ class ComingEventsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Container(
       width: MediaQuery.of(context).size.width * 0.17,
       margin: EdgeInsets.only(right: 10),
@@ -23,7 +25,8 @@ class ComingEventsContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: AppColors.grey),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      padding: EdgeInsets.symmetric(
+          horizontal: MySize.size20, vertical: MySize.size30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -32,30 +35,30 @@ class ComingEventsContainer extends StatelessWidget {
             style: TextStyle(color: AppColors.secondary),
           ),
           SizedBox(
-            height: 10,
+            height: MySize.size10,
           ),
           CustomText(
             text:
                 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
             style: TextStyle(
               color: AppColors.textGreyColor,
-              fontSize: 13,
+              fontSize: MySize.size14,
               fontWeight: FontWeight.w400,
             ),
           ),
           SizedBox(
-            height: 10,
+            height: MySize.size10,
           ),
           CustomText(
             text: 'Date: Time',
             color: AppColors.primary,
             style: TextStyle(
                 color: AppColors.primary,
-                fontSize: 13,
+                fontSize: MySize.size14,
                 fontWeight: FontWeight.w400),
           ),
           SizedBox(
-            height: 10,
+            height: MySize.size10,
           ),
           Container(
             width: double.infinity,

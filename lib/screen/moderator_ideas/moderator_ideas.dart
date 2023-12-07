@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project22/screen/moderator_ideas/components/insight_data.dart';
 import 'package:project22/screen/moderator_ideas/components/next_steps.dart';
 import 'package:project22/screen/moderator_ideas/components/potential_improvement.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/custom_text_field/textformfield.dart';
 import 'package:provider/provider.dart';
 
@@ -34,13 +35,14 @@ class _ModeratorIdeasState extends State<ModeratorIdeas> {
       NextSteps(),
       PotentialImprovement(),
     ];
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
       appBar: MyAppBar(),
       body: Container(
         margin: EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 50,
+          horizontal: MySize.size25,
+          vertical: MySize.size50,
         ),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +52,7 @@ class _ModeratorIdeasState extends State<ModeratorIdeas> {
                 text: "Ideas / Discuss",
                 style: AppTextStyles.mainHeadingStyle,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: MySize.size20),
               Consumer<EventScreenProvider>(
                   builder: (context, selectedIndexProvider, child) {
                 return Expanded(
@@ -58,7 +60,7 @@ class _ModeratorIdeasState extends State<ModeratorIdeas> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
+                        height: MySize.size40,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -78,8 +80,8 @@ class _ModeratorIdeasState extends State<ModeratorIdeas> {
                                     }
                                   },
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
-                                    margin: EdgeInsets.only(right: 20),
+                                    padding: EdgeInsets.all(MySize.size10),
+                                    margin: EdgeInsets.only(right: MySize.size20),
                                     decoration: ShapeDecoration(
                                       color:
                                           selectedIndexProvider.selectedIndex ==
@@ -102,7 +104,7 @@ class _ModeratorIdeasState extends State<ModeratorIdeas> {
                                       child: Text(
                                         buttonTitles[index],
                                         style: TextStyle(
-                                          fontSize: 13,
+                                          fontSize: MySize.size14,
                                           fontFamily: 'Source Sans Pro',
                                           fontWeight: FontWeight.w400,
                                           color: selectedIndexProvider
@@ -118,15 +120,15 @@ class _ModeratorIdeasState extends State<ModeratorIdeas> {
                               },
                             ),
                             Container(
-                                width: 300,
-                                height: 50,
+                                width: MySize.size300,
+                                height: MySize.size50,
                                 child: CustomTextFormField(
                                     hintText: 'Search',
                                     controller: _searchController)),
                           ],
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: MySize.size15),
                       Expanded(
                         child: selectedIndexProvider.selectedIndex == -1
                             ? InsightData()

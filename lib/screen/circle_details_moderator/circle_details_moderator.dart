@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:project22/provider/event_screen_controller.dart';
 import 'package:project22/provider/moderator_benchmark_controller.dart/moderator_bechmark.dart';
 import 'package:project22/screen/circle_details_moderator/components/circle_container.dart';
 import 'package:project22/screen/circle_details_moderator/components/file_container.dart';
 import 'package:project22/screen/circle_details_moderator/components/member_container.dart';
 import 'package:project22/screen/circle_details_moderator/components/overview_container.dart';
-import 'package:project22/screen/event_day_screen/components/dafault_container.dart';
-import 'package:project22/screen/event_day_screen/components/ideas_screen.dart';
-import 'package:project22/screen/event_day_screen/components/presentation_screen.dart';
-import 'package:project22/screen/moderator_benchmark_screen/moderator_benchmark_screen.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
-import 'package:project22/widget/stepper_widget.dart/stepper_widget.dart';
 import 'package:provider/provider.dart';
 
 class CircleDetailsModerator extends StatelessWidget {
@@ -29,13 +24,14 @@ class CircleDetailsModerator extends StatelessWidget {
       CircleContainer(),
       FileContainer(),
     ];
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
       appBar: MyAppBar(),
       body: Container(
         margin: EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 50,
+          horizontal: MySize.size25,
+          vertical: MySize.size50,
         ),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +42,7 @@ class CircleDetailsModerator extends StatelessWidget {
                 style: AppTextStyles.mainHeadingStyle,
               ),
               SizedBox(
-                height: 20,
+                height: MySize.size20,
               ),
               Consumer<ModeratorControllers>(
                   builder: (context, selectedIndexProvider, child) {
@@ -109,7 +105,7 @@ class CircleDetailsModerator extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: MySize.size15),
                       Expanded(
                         child:
                             screenContents[selectedIndexProvider.selectedIndex],

@@ -4,6 +4,7 @@ import 'package:project22/screen/participant_all_circle_ideas/components/horizon
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_constants/app_constant.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 
@@ -12,12 +13,13 @@ class EventTopIdea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Scaffold(
       backgroundColor: AppColors.textWhiteColor,
       appBar: MyAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(MySize.size20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -25,9 +27,9 @@ class EventTopIdea extends StatelessWidget {
                 text: "Top of the idea",
                 style: AppTextStyles.mainHeadingStyle,
               ),
-              SizedBox(height: 30),
+              SizedBox(height: MySize.size30),
               GroupContainer(groupNo: 'Group No 8'),
-              SizedBox(height: 20),
+              SizedBox(height: MySize.size20),
               IdeaContainer(text: AppTexts.customLoremText),
             ],
           ),

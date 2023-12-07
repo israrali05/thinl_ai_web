@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:project22/widget/app_bar/appbar.dart';
 import 'package:project22/widget/custom_text/customtext.dart';
 import 'package:project22/widget/custom_text_field/textformfield.dart';
@@ -21,7 +22,7 @@ class _ParticipantGroupChatState extends State<ParticipantGroupChat> {
       appBar: MyAppBar(),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(MySize.size25),
         child: ListView(
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,8 +31,8 @@ class _ParticipantGroupChatState extends State<ParticipantGroupChat> {
               style: AppTextStyles.mainHeadingStyle,
             ),
             Container(
-              padding: EdgeInsets.all(25),
-              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(MySize.size25),
+              margin: EdgeInsets.all(MySize.size10),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.8,
               decoration: BoxDecoration(
@@ -50,8 +51,8 @@ class _ParticipantGroupChatState extends State<ParticipantGroupChat> {
                   Expanded(
                     flex: 1,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: MySize.size10, vertical: MySize.size10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

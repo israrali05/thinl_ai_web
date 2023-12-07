@@ -3,6 +3,7 @@ import 'package:project22/provider/feedback_controller.dart';
 import 'package:project22/utils/app_colors/colors.dart';
 import 'package:project22/utils/app_font_styles/app_styles.dart';
 import 'package:project22/utils/app_images/app_images.dart';
+import 'package:project22/utils/my_size/mysize.dart';
 import 'package:provider/provider.dart';
 
 class MessageBoxWidget extends StatelessWidget {
@@ -12,12 +13,14 @@ class MessageBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MySize().init(context);
     return Consumer<SpeechProvider>(builder: (context, provider, child) {
       if (!provider.isListening) {
         provider.initializeSpeech();
       }
+
       return Container(
-        height: 150,
+        height: MySize.size140,
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Colors.white,
@@ -29,7 +32,7 @@ class MessageBoxWidget extends StatelessWidget {
         child: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 40.0),
+              padding: EdgeInsets.only(left: MySize.size40),
               child: TextField(
                 controller:
                     TextEditingController(text: provider.recognizedText),
@@ -42,7 +45,8 @@ class MessageBoxWidget extends StatelessWidget {
                       ? 'Listening....'
                       : 'Enter your Message',
                   hintStyle: AppTextStyles.hintStyle.copyWith(
-                      fontSize: 12, color: AppColors.grey.withOpacity(0.5)),
+                      fontSize: MySize.size12,
+                      color: AppColors.grey.withOpacity(0.5)),
                   border: InputBorder.none,
                 ),
               ),
@@ -58,7 +62,7 @@ class MessageBoxWidget extends StatelessWidget {
                 },
                 child: Image.asset(
                   AppImages.feedBackmMicrophonepng,
-                  height: 22,
+                  height: MySize.size22,
                 ),
               ),
             )
